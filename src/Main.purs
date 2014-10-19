@@ -50,20 +50,19 @@ clean txt = JQ.create "<div />" >>= JQ.appendText txt >>= JQ.getText
 type Interaction eff = StateT ChatState (Eff eff)
 
 
--- setUserName :: forall eff. Interaction (trace :: Trace, dom ::
-   -- JQ.DOM | eff) Unit
-setUserName :: forall eff. StateT ChatState Identity Unit
+setUserName :: forall eff. Interaction (trace :: Trace, dom :: JQ.DOM | eff) Unit
+-- setUserName :: forall eff. StateT ChatState (Eff eff) Unit
 setUserName = do
-  let s = { currentUser: "Ben", nChatting: 10 }
-  put s
-  -- el <- lift $ readString <$> (JQ.select "test" >>= JQ.getValue)
-  -- lift $ trace "ben"  
-  -- name <- lift $ readString <$> (JQ.select ".usernameInput" >>= JQ.getValue)
-  -- -- return unit
-  -- -- lift $ print name
-  -- case trim <$> name of
-  --    Left err -> return unit -- lift $ print err 
-  --    -- Right nm -> modify $ \s -> s -- ChatState { currentUser: nm, nChatting: s.nChatting }
+  -- let s = { currentUser: "Ben", nChatting: 10 }
+  -- put s
+  el <- lift $ readString <$> (JQ.select "test" >>= JQ.getValue)
+  lift $ trace "ben"  
+  name <- lift $ readString <$> (JQ.select ".usernameInput" >>= JQ.getValue)
+  -- return unit
+  -- lift $ print name
+  case trim <$> name of
+     Left err -> return unit -- lift $ print err 
+     Right nm -> modify $ \s -> s -- ChatState { currentUser: nm, nChatting: s.nChatting }
   
 -- loginUIAction = do
 --    loginPage >>= fadeOut

@@ -1,8 +1,5 @@
-Running "psc:all" (psc) task
 >> Error creating file dist/Main.js
 >> 
-Warning: Error at src/Main.purs line 55, column 1: 
+Warning: Error at src/Main.purs line 53, column 1: 
 Error in declaration setUserName
-No instance found for Control.Monad.State.Class.MonadState { nChatting :: Prim.Number, currentUser :: Prim.String } (Control.Monad.State.Trans.StateT { nChatting :: Prim.Number, currentUser :: Prim.String } Control.Monad.Identity.Identity) Use --force to continue.
-
-Aborted due to warnings.
+No instance found for Control.Monad.State.Class.MonadState u9757 (Control.Monad.State.Trans.StateT { nChatting :: Prim.Number, currentUser :: Prim.String } (Control.Monad.Eff.Eff (trace :: Debug.Trace.Trace, dom :: Control.Monad.JQuery.DOM | eff9698))) Use --force to continue.
