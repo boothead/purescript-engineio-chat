@@ -1,0 +1,29 @@
+{
+  "name": "purescript-engineio-chat",
+  "version": "0.0.1",
+  "description": "Frontend to ocharles' engine.io chat example in Purescript",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "bower": "~1.3.2",
+    "grunt": "~0.4.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-purescript": "~0.5.0",
+    "grunt-execute": "~0.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boothead/purescript-engineio-chat.git"
+  },
+  "author": "Ben Ford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boothead/purescript-engineio-chat/issues"
+  },
+  "homepage": "https://github.com/boothead/purescript-engineio-chat",
+  "dependencies": {
+    "socket.io": "^1.1.0"
+  }
+}
